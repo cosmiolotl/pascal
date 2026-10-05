@@ -1,0 +1,37 @@
+{
+  "name": "pascal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Directed Discord ban and unban synchronization built with Kuiper",
+  "engines": {
+    "node": ">=24"
+  },
+  "allowScripts": {
+    "kuiper": true,
+    "esbuild": true
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env --import tsx src/index.ts",
+    "dev": "node --env-file-if-exists=.env --watch --import tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "node --import tsx --test --test-concurrency=1 test/*.e2e.ts",
+    "check": "npm run typecheck && npm run test:e2e"
+  },
+  "dependencies": {
+    "@discordjs/core": "^2.6.0",
+    "@discordjs/rest": "^2.6.3",
+    "@electric-sql/pglite": "^0.5.8",
+    "@electric-sql/pglite-socket": "0.2.11",
+    "discord-api-types": "^0.38.55",
+    "drizzle-orm": "^0.45.3",
+    "kuiper": "github:cosmiolotl/kuiper#ce934e732db4a2bab9354c49cc3f97d028841113",
+    "postgres": "^3.4.9",
+    "tsx": "^4.23.15",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+.env
+.data/
+coverage/
+*.log
+
+migrations/
+
+AGENTS_ARCHITECTURE.md
